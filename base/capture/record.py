@@ -71,7 +71,7 @@ class Record(threading.Thread):
             os.system('ffmpeg -loglevel panic -hide_banner -nostats -loop 1 -t 1 -i ' + last_image
                       + ' -c:v libx264 -vf "format=yuv420p" reports/tmp/' + self.test + '_lastimg.mp4')
             os.system('ffmpeg -loglevel panic -hide_banner -nostats -i "concat:reports/tmp/' + self.test
-                      + '_body.mp4|reports/tmp/' + self.test + '_lastimg.mp4" -c copy ' + self.reports_folder
+                      + '_body.avi|reports/tmp/' + self.test + '_lastimg.mp4" -c copy ' + self.reports_folder
                       + self.test + '.mp4')
         except Exception as e:
             self.logger.error(e)
